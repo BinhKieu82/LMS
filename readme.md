@@ -16,6 +16,10 @@ Client dependencies:
   "react-router-dom": "control between pages: login/register/landing pages...",
   "react-scripts": "4.0.3",
   "web-vitals": "^1.0.1"
+  
+  "devDependencies": {
+    "cross-env": "set chrome as default browser when npm start"
+  }
 
 Server dependencies:
   "argon2": "harsh users password in database",    
