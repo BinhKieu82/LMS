@@ -6,6 +6,9 @@ const verifyToken = require('../middleware/auth')
 
 const User = require('../models/User')
 
+//test auth.js communicates with index.js
+router.get('/', (req,res) => res.send('User route'))
+
 // @route GET api/auth
 // @desc Check if user is logged in
 // @access Public

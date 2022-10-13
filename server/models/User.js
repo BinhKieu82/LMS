@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const UserSchema = new Schema({
+const UserSchema = new Schema({ //collection name - table
 	username: {
 		type: String,
 		required: true,

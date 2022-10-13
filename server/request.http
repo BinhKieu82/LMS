@@ -1,9 +1,12 @@
+GET http://localhost:5000/api/auth
+
+###
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "jim",
-  "password": "jim"
+  "username": "binhkieu",
+  "password": "binhkieu"
 }
 
 ###
@@ -20,26 +23,24 @@ Content-Type: application/json
 
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTczNjIxNjV9.ZTwbrIeDpchmUjkNQv_bmBd7_Maw2Gp7Y1ioZx2s7i8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
 
 {
-  "title": "React",
-  "description": "React",
-  "url": "react.com",
+  "title": "Grapql",
+  "description": "Advanced tool to communicate with backend",
+  "url": "Grapql.com",
   "status": "TO LEARN"
 }
 
 ###
 
 GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTcwMTk3ODF9.ri-nHdgZc1VQTocFLfMgF4_PhFf2TeUVqXLd8tpOkeA
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
 ###
 
 PUT http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTcwMTk3ODF9.ri-nHdgZc1VQTocFLfMgF4_PhFf2TeUVqXLd8tpOkeA
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
 {
   "title": "Vue",
   "description": "VUEEEEE",
@@ -50,4 +51,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxY
 ###
 
 DELETE http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDYxYjk1YjdkMjljZTFiMTA5YmQxZTAiLCJpYXQiOjE2MTcwMTk3ODF9.ri-nHdgZc1VQTocFLfMgF4_PhFf2TeUVqXLd8tpOkeA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk

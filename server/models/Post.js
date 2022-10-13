@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const PostSchema = new Schema({
+const PostSchema = new Schema({//skill needs to learn
 	title: {
 		type: String,
 		required: true
@@ -14,11 +14,11 @@ const PostSchema = new Schema({
 	},
 	status: {
 		type: String,
-		enum: ['TO LEARN', 'LEARNING', 'LEARNED']
+		enum: ['TO LEARN', 'LEARNING', 'LEARNED'] //only within 3 types
 	},
 	user: {
 		type: Schema.Types.ObjectId,
-		ref: 'users'
+		ref: 'users' //connect to users table/collection
 	}
 })
 
