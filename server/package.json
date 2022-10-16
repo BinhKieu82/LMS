@@ -1,15 +1,25 @@
 {
 	"name": "server",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Blog & Learning Management System App",
 	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BinhKieu82/LMS"
+	},
+	"author": "Bruce Kieu",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/BinhKieu82/LMS/issues"
+	},
+	"homepage": "https://github.com/BinhKieu82/LMS/blob/master/readme.md",
 	"scripts": {
+		"client": "cd ../client && npm start",
+		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
 		"start": "node index",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"server": "nodemon index"
 	},
-	"author": "",
-	"license": "ISC",
 	"dependencies": {
 		"argon2": "^0.27.1",
 		"cors": "^2.8.5",

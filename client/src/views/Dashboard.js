@@ -47,7 +47,7 @@ const Dashboard = () => {
 				<Card className='text-center mx-5 my-5'>
 					<Card.Header as='h1'>Hi {username}</Card.Header>
 					<Card.Body>
-						<Card.Title>Welcome to LearnIt</Card.Title>
+						<Card.Title>Welcome to Self Learning System</Card.Title>
 						<Card.Text>
 							Click the button below to track your first skill to learn
 						</Card.Text>
@@ -55,7 +55,7 @@ const Dashboard = () => {
 							variant='primary'
 							onClick={setShowAddPostModal.bind(this, true)}
 						>
-							LearnIt!
+							Learn It!
 						</Button>
 					</Card.Body>
 				</Card>
