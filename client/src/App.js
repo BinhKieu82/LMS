@@ -5,8 +5,7 @@ import Auth from './views/Auth'
 import AuthContextProvider from './contexts/AuthContext'
 import Dashboard from './views/Dashboard'
 import ProtectedRoute from './components/routing/ProtectedRoute'
-import About from './views/About'
-import Header from './components/layout/Header.js'
+import Roadmap from './views/Roadmap'
 import CV from './views/CV'
 import PostContextProvider from './contexts/PostContext'
 
@@ -30,7 +29,7 @@ function App() {
 						/>
 						{/* <ProtectedRoute exact path='/login' component={About} /> */}
 						<ProtectedRoute exact path='/dashboard' component={Dashboard} />
-						{/* <ProtectedRoute exact path='/about' component={CV} /> */}
+						<ProtectedRoute exact path='/dashboard/roadmap' component={Roadmap} />
 					</Switch>
 				</Router>
 			</PostContextProvider>

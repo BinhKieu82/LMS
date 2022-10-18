@@ -1,7 +1,7 @@
 import Header from './Header'
 
 const Landing = () => {
-	return(
+	return (
 		<>
 			<Header />
 			<header class="masthead" id="ssm">
@@ -27,7 +27,7 @@ const Landing = () => {
                   <a href="{% url 'blog:update' post.slug %}" class="btn btn-warning">Edit</a>
                   <a href="{% url 'blog:delete' post.slug %}" class="btn btn-danger">Delete</a>
                 </p>
-                <p class="card-text">fdzsgshgsfhj}</p>
+                <p class="card-text">fdzsgshgsfhj</p>
                 <a href="{% url 'blog:post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
               </div>
             </div>

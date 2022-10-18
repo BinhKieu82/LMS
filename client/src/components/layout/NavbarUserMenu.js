@@ -31,7 +31,7 @@ const NavbarUserMenu = () => {
 					
 					<Nav.Link
 						className='font-weight-bolder text-white'
-						to='/{username}/roadmap'
+						to='/dashboard/roadmap'
 						as={Link}
 					>
 						Roadmap
