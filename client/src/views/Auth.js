@@ -4,6 +4,7 @@ import { AuthContext } from '../contexts/AuthContext'
 import { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
 import Spinner from 'react-bootstrap/Spinner'
+import Header from '../components/layout/Header.js'
 
 const Auth = ({ authRoute }) => {
 	const {
@@ -29,6 +30,7 @@ const Auth = ({ authRoute }) => {
 
 	return (
 		<div className='landing'>
+			<Header />
 			<div className='dark-overlay'>
 				<div className='landing-inner'>
 					<h1>Leaning Management System</h1>
