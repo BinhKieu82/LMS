@@ -4,7 +4,9 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const authRouter = require('./routes/auth')
-const postRouter = require('./routes/post')
+const moduleRouter = require('./routes/module')
+const threadRouter = require('./routes/thread')
+// const commentRouter = require('./routes/comment')
 
 const connectDB = async () => {
 	try {
@@ -32,7 +34,10 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/auth', authRouter)
-app.use('/api/posts', postRouter)
+app.use('/api/modules', moduleRouter)
+app.use('/api/threads', threadRouter)
+// app.use('/api/comments', commentRouter)
+
 
 const PORT = process.env.PORT || 5000
 

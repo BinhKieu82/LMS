@@ -2,27 +2,28 @@ const express = require('express')
 const router = express.Router()
 const verifyToken = require('../middleware/auth')
 
-const Post = require('../models/Post')
+const Module = require('../models/Module')
 
-// @route GET api/posts
-// @desc Get posts
+// @route GET api/modules
+// @desc Get modules
 // @access Private
 router.get('/', verifyToken, async (req, res) => {
 	try {
-		const posts = await Post.find({ user: req.userId }).populate('user', [
+		const modules = await Module.find({ user: req.userId }).populate('user', [
 			'username'
 		])
-		res.json({ success: true, posts })
+		res.json({ success: true, modules })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ success: false, message: 'Internal server error' })
 	}
 })
 
-// @route POST api/posts
-// @desc Create post
+// @route POST api/modules
+// @desc Create module
 // @access Private
 router.post('/', verifyToken, async (req, res) => {
+	// console.log(req.body)
 	const { title, description, url, status } = req.body
 
 	// Simple validation
@@ -32,7 +33,7 @@ router.post('/', verifyToken, async (req, res) => {
 			.json({ success: false, message: 'Title is required' })
 
 	try {
-		const newPost = new Post({
+		const newModule = new Module({
 			title,
 			description,
 			url: url.startsWith('https://') ? url : `https://${url}`,
@@ -40,17 +41,17 @@ router.post('/', verifyToken, async (req, res) => {
 			user: req.userId
 		})
 
-		await newPost.save()
+		await newModule.save()
 
-		res.json({ success: true, message: 'Happy learning!', post: newPost })
+		res.json({ success: true, message: 'Happy learning!', module: newModule })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ success: false, message: 'Internal server error' })
 	}
 })
 
-// @route PUT api/posts
-// @desc Update post
+// @route PUT api/modules
+// @desc Update module
 // @access Private
 router.put('/:id', verifyToken, async (req, res) => {
 	const { title, description, url, status } = req.body
@@ -62,32 +63,32 @@ router.put('/:id', verifyToken, async (req, res) => {
 			.json({ success: false, message: 'Title is required' })
 
 	try {
-		let updatedPost = {
+		let updatedModule = {
 			title,
 			description: description || '',
 			url: (url.startsWith('https://') ? url : `https://${url}`) || '',
 			status: status || 'TO LEARN'
 		}
 
-		const postUpdateCondition = { _id: req.params.id, user: req.userId }
+		const moduleUpdateCondition = { _id: req.params.id, user: req.userId }
 
-		updatedPost = await Post.findOneAndUpdate(
-			postUpdateCondition,
-			updatedPost,
+		updatedModule = await Module.findOneAndUpdate(
+			moduleUpdateCondition,
+			updatedModule,
 			{ new: true }
 		)
 
-		// User not authorised to update post or post not found
-		if (!updatedPost)
+		// User not authorised to update module or module not found
+		if (!updatedModule)
 			return res.status(401).json({
 				success: false,
-				message: 'Post not found or user not authorised'
+				message: 'Module not found or user not authorised'
 			})
 
 		res.json({
 			success: true,
 			message: 'Excellent progress!',
-			post: updatedPost
+			module: updatedModule
 		})
 	} catch (error) {
 		console.log(error)
@@ -95,22 +96,22 @@ router.put('/:id', verifyToken, async (req, res) => {
 	}
 })
 
-// @route DELETE api/posts
-// @desc Delete post
+// @route DELETE api/modules
+// @desc Delete module
 // @access Private
 router.delete('/:id', verifyToken, async (req, res) => {
 	try {
-		const postDeleteCondition = { _id: req.params.id, user: req.userId }
-		const deletedPost = await Post.findOneAndDelete(postDeleteCondition)
+		const moduleDeleteCondition = { _id: req.params.id, user: req.userId }
+		const deletedModule = await Module.findOneAndDelete(moduleDeleteCondition)
 
-		// User not authorised or post not found
-		if (!deletedPost)
+		// User not authorised or module not found
+		if (!deletedModule)
 			return res.status(401).json({
 				success: false,
-				message: 'Post not found or user not authorised'
+				message: 'Module not found or user not authorised'
 			})
 
-		res.json({ success: true, post: deletedPost })
+		res.json({ success: true, module: deletedModule })
 	} catch (error) {
 		console.log(error)
 		res.status(500).json({ success: false, message: 'Internal server error' })

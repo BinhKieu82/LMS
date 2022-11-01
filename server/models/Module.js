@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const PostSchema = new Schema({//skill needs to learn
+const ModuleSchema = new Schema({//skill needs to learn
 	title: {
 		type: String,
 		required: true
@@ -22,4 +22,4 @@ const PostSchema = new Schema({//skill needs to learn
 	}
 })
 
-module.exports = mongoose.model('posts', PostSchema)
+module.exports = mongoose.model('modules', ModuleSchema)

@@ -14,6 +14,10 @@ const UserSchema = new Schema({ //collection name - table
 	createdAt: {
 		type: Date,
 		default: Date.now
+	},
+	thread: {
+		type: Schema.Types.ObjectId,
+		ref: 'threads' //connect to threads table/collection
 	}
 })
 

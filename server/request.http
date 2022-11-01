@@ -1,4 +1,13 @@
+###
 GET http://localhost:5000/api/auth
+
+###
+GET http://localhost:5000/api/auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
+
+###
+GET http://localhost:5000/api/threads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
 
 ###
 POST http://localhost:5000/api/auth/register
@@ -15,32 +24,32 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "henry",
-  "password": "henry"
+  "username": "jim",
+  "password": "jim"
 }
 
 ###
 
-POST http://localhost:5000/api/posts
+POST http://localhost:5000/api/modules
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
 
 {
-  "title": "Grapql",
-  "description": "Advanced tool to communicate with backend",
-  "url": "Grapql.com",
+  "title": "HandleBar",
+  "description": "Advanced tool for frontend of Express",
+  "url": "HandleBar.com",
   "status": "TO LEARN"
 }
 
 ###
 
-GET http://localhost:5000/api/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
+GET http://localhost:5000/api/modules
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
 ###
 
-PUT http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
+PUT http://localhost:5000/api/modules/6061c25ac2533d41dcae2b19
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
 {
   "title": "Vue",
   "description": "VUEEEEE",
@@ -50,5 +59,42 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1Y
 
 ###
 
-DELETE http://localhost:5000/api/posts/6061c25ac2533d41dcae2b19
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1YTM1M2Q2MThjNzc0YTQwNWMxN2MiLCJpYXQiOjE2NjU1MDgxNzl9.kq2g-gef98Xqm2nzRrTqJVtZV4XfQs_EEZ0cRx6ZrVk
+DELETE http://localhost:5000/api/modules/6061c25ac2533d41dcae2b19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
+
+###
+
+POST http://localhost:5000/api/threads
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
+
+{
+  "title": "Log prediction - CNN Unet",
+  "slug": "log-prediction",
+  "content": "Using CNN Unet predicting missing logs",
+  "like": 2,
+  "active": 0
+}
+
+###
+PUT http://localhost:5000/api/threads/63605725774168620c9d22dd
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
+
+{
+  "title": "Log prediction - CNN Unet",
+  "slug": "log-prediction",
+  "content": "Using CNN Unet predicting missing logs from other well logs",
+  "like": 3,
+  "active": 1
+}
+
+###
+POST http://localhost:5000/api/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
+
+{
+  "comment": "Good stuff",
+  "active": 0
+}

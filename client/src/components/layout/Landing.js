@@ -11,7 +11,7 @@ const Landing = () => {
             <div class=" col-md-8 col-md-10 mx-auto">
               <div class="site-heading">
                 <h2 class=" site-heading my-4 mt-3 text-white"> Welcome to Bruce Kieu Blog </h2>
-                <p class="text-light">Let's code together..! &nbsp</p>
+                <p class="text-light">Let's learn together..! &nbsp</p>
               </div>
             </div>
           </div>
