@@ -54,7 +54,7 @@ router.post('/', verifyToken, async (req, res) => {
 // @desc Update thread
 // @access Private
 router.put('/:id', verifyToken, async (req, res) => {
-  console.log(req.body, req.params.id)
+  // console.log(req.body, req.params.id)
 	const { title, slug, content, like, active } = req.body
 
 	// Simple validation

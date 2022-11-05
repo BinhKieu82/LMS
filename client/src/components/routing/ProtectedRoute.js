@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 import Spinner from 'react-bootstrap/Spinner'
 import NavbarUserMenu from '../layout/NavbarUserMenu'
+import Header from '../layout/Header'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
 	const {
@@ -26,7 +27,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 						<Component {...rest} {...props} />
 					</>
 				) : (
-					<Redirect to='/login' />
+					<>
+						<Header />
+						<Redirect to='/login' />
+					</>
 				)
 			}
 		/>

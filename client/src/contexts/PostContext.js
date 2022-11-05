@@ -32,10 +32,11 @@ const PostContextProvider = ({ children }) => {
 	// Get all posts
 	const getPosts = async () => {
 		try {
-			const response = await axios.get(`${apiUrl}/posts`)
-			if (response.data.success) {
-				dispatch({ type: POSTS_LOADED_SUCCESS, payload: response.data.posts })
+			const response = await axios.get(`${apiUrl}/modules`)			
+			if (response.data.success) {				
+				dispatch({ type: POSTS_LOADED_SUCCESS, payload: response.data.modules })
 			}
+			// console.log(response.data)
 		} catch (error) {
 			dispatch({ type: POSTS_LOADED_FAIL })
 		}
@@ -44,9 +45,10 @@ const PostContextProvider = ({ children }) => {
 	// Add post
 	const addPost = async newPost => {
 		try {
-			const response = await axios.post(`${apiUrl}/posts`, newPost)
+			const response = await axios.post(`${apiUrl}/modules`, newPost)
+			console.log(response.data.module)
 			if (response.data.success) {
-				dispatch({ type: ADD_POST, payload: response.data.post })
+				dispatch({ type: ADD_POST, payload: response.data.module })
 				return response.data
 			}
 		} catch (error) {
@@ -59,7 +61,7 @@ const PostContextProvider = ({ children }) => {
 	// Delete post
 	const deletePost = async postId => {
 		try {
-			const response = await axios.delete(`${apiUrl}/posts/${postId}`)
+			const response = await axios.delete(`${apiUrl}/modules/${postId}`)
 			if (response.data.success)
 				dispatch({ type: DELETE_POST, payload: postId })
 		} catch (error) {
@@ -77,11 +79,11 @@ const PostContextProvider = ({ children }) => {
 	const updatePost = async updatedPost => {
 		try {
 			const response = await axios.put(
-				`${apiUrl}/posts/${updatedPost._id}`,
+				`${apiUrl}/modules/${updatedPost._id}`,
 				updatedPost
 			)
 			if (response.data.success) {
-				dispatch({ type: UPDATE_POST, payload: response.data.post })
+				dispatch({ type: UPDATE_POST, payload: response.data.module })
 				return response.data
 			}
 		} catch (error) {

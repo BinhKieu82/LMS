@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 import Badge from 'react-bootstrap/Badge'
 import ActionButtons from './ActionButtons'
 
-const SinglePost = ({ post: { _id, status, title, description, url } }) => (
+const SingleModule = ({ post: { _id, status, title, description, url } }) => (
 	<Card
 		className='shadow'
 		border={
@@ -43,4 +43,4 @@ const SinglePost = ({ post: { _id, status, title, description, url } }) => (
 	</Card>
 )
 
-export default SinglePost
+export default SingleModule

@@ -50,8 +50,8 @@ const NavbarUserMenu = () => {
 						<img
 							src={logoutIcon}
 							alt='logoutIcon'
-							width='32'
-							height='32'
+							width='14'
+							height='14'
 							className='mr-2'
 						/>
 						Logout
