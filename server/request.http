@@ -58,12 +58,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1M
 }
 
 ###
-
 DELETE http://localhost:5000/api/modules/6061c25ac2533d41dcae2b19
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
 
 ###
 
+GET http://localhost:5000/api/threads
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
+
+###
 POST http://localhost:5000/api/threads
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1MDFhZTBmZGQ2MTc2YTBjMGE5NWYiLCJpYXQiOjE2NjcyNDcxMDR9.rqGKmKPRdrK8dJTjFGtK4XBe3NPAwmJdBZMEg99EGSc
@@ -98,3 +101,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzQ1M
   "comment": "Good stuff",
   "active": 0
 }
+

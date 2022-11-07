@@ -1,47 +1,52 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ThreadContext } from '../contexts/ThreadContext'
-import { AuthContext } from '../contexts/AuthContext'
+// import { AuthContext } from '../contexts/AuthContext'
+// import AddThreadModal from '../components/threads/AddThreadModal'
+import SingleThread from '../components/threads/SingleThread'
 // import { Redirect } from 'react-router-dom'
-// import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner'
+// import Button from 'react-bootstrap/Button'
+// import Card from 'react-bootstrap/Card'
 
 
-const About = () =>{
-	// const {
-	// 	threadState: { thread, threads, threadsLoading },
-	// 	getThreads,
-	// 	setShowAddThreadModal,
-	// 	showToast: { show, message, type },
-	// 	setShowToast
-	// } = useContext(ThreadContext)
+const About = () => {
+	// Contexts
+	const {
+		threadState: {threads, threadsLoading},
+		getThreads
+	} = useContext(ThreadContext)
+
+	// Start: Get all threads
+	useEffect(() => getThreads(), [])
+
+	let body = null
 	
-
-	return (
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 mt-3 left">
-					<div class="card mb-4">
-						<div class="card-body">
-							<h2 class="card-title">title</h2>
-							<p class="card-text text-muted h6">content 
-								<a href="{% url 'blog:update' post.slug %}" class="btn btn-warning">Edit</a>
-								<a href="{% url 'blog:delete' post.slug %}" class="btn btn-danger">Delete</a>
-							</p>
-							<p class="card-text">content</p>
-							<a href="{% url 'blog:post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-						</div>
-					</div>
-						<nav aria-label="Page navigation conatiner">
-							<ul class="pagination justify-content-center">
-								<li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-							
-								<li><a href="?page={{ post_list.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-							
-							</ul>
-						</nav> 
-				</div>
+	if (threadsLoading) {
+		body = (
+			<div className='spinner-container'>
+				<Spinner animation='border' variant='info' />
 			</div>
-		</div>
+		)
+	} else if (threads.length === 0) {
+		body = (
+			<>
+				No Thread, please add!
+			</>
+		)
+	} else {
+		body = (
+			<>
+				{ threads.map(thread => (
+					<SingleThread thread={thread} />
+				))}
+			</>
+		)
+	}
+	return (
+		<>		
+			{body}
+		</>
 	)
-} 
+}
 
 export default About

@@ -6,12 +6,13 @@ const Thread = require('../models/Thread')
 
 // @route GET api/threads
 // @desc Get threads
-// @access Private
-router.get('/', verifyToken, async (req, res) => {
+// @access Public
+router.get('/', async (req, res) => {
 	try {
-		const threads = await Thread.find({ user: req.userId }).populate('user', [
-			'username'
-		])
+		// const threads = await Thread.find({ user: req.userId }).populate('user', [
+		// 	'username'
+		// ])
+		const threads = await Thread.find()
 		res.json({ success: true, threads })
 	} catch (error) {
 		console.log(error)

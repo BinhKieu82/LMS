@@ -8,10 +8,12 @@ import ProtectedRoute from './components/routing/ProtectedRoute'
 import Roadmap from './views/Roadmap'
 import CV from './views/CV'
 import PostContextProvider from './contexts/PostContext'
+import ThreadContextProvider from './contexts/ThreadContext'
 
 function App() {
 	return (
 		<AuthContextProvider>
+			<ThreadContextProvider>
 			<PostContextProvider>
 				<Router>					
 					<Switch>						
@@ -33,6 +35,7 @@ function App() {
 					</Switch>
 				</Router>
 			</PostContextProvider>
+			</ThreadContextProvider>
 		</AuthContextProvider>
 	)
 }

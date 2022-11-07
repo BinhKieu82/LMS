@@ -33,10 +33,10 @@ const ThreadContextProvider = ({ children }) => {
 	const getThreads = async () => {
 		try {
 			const response = await axios.get(`${apiUrl}/threads`)
-			console.log(response.data)
 			if (response.data.success) {				
 				dispatch({ type: THREADS_LOADED_SUCCESS, payload: response.data.threads })
 			}
+			console.log(response.data.threads )
 		} catch (error) {
 			dispatch({ type: THREADS_LOADED_FAIL })
 		}
@@ -45,7 +45,7 @@ const ThreadContextProvider = ({ children }) => {
 	// Add thread
 	const addThread = async newThread => {
 		try {
-			const response = await axios.thread(`${apiUrl}/threads`, newThread)
+			const response = await axios.post(`${apiUrl}/threads`, newThread)
 			console.log(response.data.module)
 			if (response.data.success) {
 				dispatch({ type: ADD_THREAD, payload: response.data.module })
@@ -70,7 +70,7 @@ const ThreadContextProvider = ({ children }) => {
 	}
 
 	// Find thread when user is updating thread
-	const findThread = threadId => {
+	const findThread = (threadId) => {
 		const thread = threadState.threads.find(thread => thread._id === threadId)
 		dispatch({ type: FIND_THREAD, payload: thread })
 	}

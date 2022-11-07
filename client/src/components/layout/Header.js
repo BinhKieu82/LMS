@@ -1,10 +1,6 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
-import logoutIcon from '../../assets/logout.svg'
-import Button from 'react-bootstrap/Button'
-import { AuthContext } from '../../contexts/AuthContext'
-import { useContext } from 'react'
 
 
 const Header = () => {	
