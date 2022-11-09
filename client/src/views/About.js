@@ -39,6 +39,12 @@ const About = () => {
 				{ threads.map(thread => (
 					<SingleThread thread={thread} />
 				))}
+				<nav aria-label="Page navigation conatiner">
+					<ul className="pagination justify-content-center">
+						<li><a href="?page={{ page_obj.previous_page_number }}" className="page-link">&laquo; PREV </a></li>							
+						<li><a href="?page={{ post_list.next_page_number }}" className="page-link"> NEXT &raquo;</a></li>							
+					</ul>
+				</nav> 
 			</>
 		)
 	}
